@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { menuData, MenuItem } from "../data/MenuData";
 import Button from "./Button";
 import Bars from "../images/icons8-menu.svg";
-
+import LuuLogo from "../images/luudecor_logo.png";
 
 const Nav = styled.nav`
   display: flex;
@@ -12,7 +12,7 @@ const Nav = styled.nav`
   height: 60px;
   justify-content: space-between;
   padding: 1rem 2rem;
-  //background-color: #000;
+  background-color: rgba(0,0,0,0.1);
   position: fixed;
   z-index: 100;
   top: 0;
@@ -32,7 +32,11 @@ const NavLink = css`
 
 const Logo = styled(Link)`
   ${NavLink}
-  font-style: italic;
+  //font-style: italic;
+  background-image: url(${LuuLogo});
+  background-size: cover;
+  height: 35px;
+  width: 154px;
 `;
 /**
  * Lưu ý: khi sử dụng Link trong react-router-dom bạn phải Wrap comp sử dụng chúng
@@ -93,7 +97,7 @@ export type NavProps = {
 const Navbar: React.FC<NavProps> = ({toggle}) => {
   return (
     <Nav>
-      <Logo to="/"> KAKA </Logo>
+      <Logo to="/"></Logo>
       <MenuBars onClick={toggle}/>
       <NavMenu>
         {menuData.map((item: MenuItem, index: number) => (
